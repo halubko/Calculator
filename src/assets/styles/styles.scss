@@ -24,11 +24,11 @@ main{
     flex-direction: column;
 
     #output{
-      width: calc(4 * 5vw + 2 * 5px);
+      width: calc(4 * 5vw + 5px);
       border-radius: 5px;
-      border: none;
+      border: 1px solid $text-color;
       height: 30%;
-      padding: 2px;
+      padding: 5px;
       margin: 0;
       font-size: 5vh;
       text-align: right;
