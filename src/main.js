@@ -31,7 +31,7 @@ document.querySelectorAll(".input_btn").forEach((btn) =>
 )
 
 //AC button
-document.getElementById("clean").addEventListener("click", () => {
+document.getElementById("clear").addEventListener("click", () => {
    document.getElementById("output").value = "0"
    document.querySelectorAll(".functional").forEach((btn) => {
       btn.removeAttribute("id")
@@ -39,7 +39,7 @@ document.getElementById("clean").addEventListener("click", () => {
 })
 
 //Functional buttons
-document.querySelectorAll(".functional").forEach((btn) => {
+document.querySelectorAll(".functional").forEach((btn) =>
    btn.addEventListener("click", () => {
       const output = document.getElementById("output")
       const operator = btn.getAttribute("operator")
@@ -68,4 +68,10 @@ document.querySelectorAll(".functional").forEach((btn) => {
          }
       }
    })
+)
+
+//Invert button
+document.getElementById("invert").addEventListener("click", () => {
+   const output = document.getElementById("output")
+   output.value = -output.value
 })
