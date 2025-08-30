@@ -1,0 +1,88 @@
+@use "sass:color";
+
+$wrapper-background-color: rgb(128, 128, 128);
+$button-background-color: rgb(168, 168, 168);
+$button-top-background-color: rgb(143, 143, 143);
+$text-color: #fff;
+
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+main{
+  .wrapper{
+    background-color: $wrapper-background-color;
+    width: fit-content;
+    margin: 0 auto;
+    border-radius: 10px;
+    border: none;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+
+    #output{
+      width: calc(4 * 5vw + 2 * 5px);
+      border-radius: 5px;
+      border: none;
+      height: 30%;
+      padding: 2px;
+      margin: 0;
+      font-size: 5vh;
+      text-align: right;
+      background-color: $wrapper-background-color;
+      color: $text-color;
+      &:focus{
+        outline: none;
+      }
+      &::-webkit-outer-spin-button,
+      &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+    }
+
+    .buttons{
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      margin-top: 20px;
+      gap: 5px;
+      width: fit-content;
+
+      button{
+        height: 5vw;
+        width: 5vw;
+        background-color: $button-background-color;
+        border: none;
+        border-radius: 5px;
+        font-size: 3.5vh;
+        color: $text-color;
+        &:active {
+          background-color: color.scale($button-background-color, $lightness: -20%);
+        }
+      }
+
+      #zero{
+        grid-column: span 2;
+        width: auto;
+      }
+
+      .functional{
+        background-color: rgb(255, 183, 0);
+        &:active {
+          background-color: color.scale(rgb(255, 183, 0), $lightness: -20%);
+        }
+      }
+
+      .top{
+        background-color: $button-top-background-color;
+        &:active {
+          background-color: color.scale($button-top-background-color, $lightness: -20%);
+        }
+      }
+    }
+  }
+}
+
