@@ -76,6 +76,11 @@ main{
         }
       }
 
+      #active{
+        background-color: rgb(255, 191, 29);
+        border: 1px solid $text-color;
+      }
+
       .top{
         background-color: $button-top-background-color;
         &:active {
