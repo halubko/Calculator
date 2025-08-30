@@ -15,6 +15,12 @@ document.querySelectorAll(".input_btn").forEach((btn) =>
       if (input_data === "." && output.value.includes(".")) {
          return
       }
+
+      if (output.getAttribute("number2") === "true") {
+         output.value = ""
+         output.removeAttribute("number2")
+      }
+
       if (output.value === "0" && input_data !== ".") {
          output.value = ""
          output.value += input_data
@@ -44,7 +50,7 @@ document.querySelectorAll(".functional").forEach((btn) => {
          })
          btn.id = "active"
          btn.setAttribute("number1", output.value)
-         output.value = "0"
+         output.setAttribute("number2", "true")
       }
 
       if (operator === "equals") {
