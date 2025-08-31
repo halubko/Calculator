@@ -7,7 +7,7 @@ document.getElementById("app").innerHTML = `
 <div class="wrapper">
             <div class="screen">
                <label for="output">
-                  <input type="text" id="output" value="0" pattern="[0-9]*\\.?[0-9]*" />
+                  <input type="text" id="output" value="0" readonly />
                </label>
             </div>
             <div class="buttons">
@@ -33,11 +33,6 @@ document.getElementById("app").innerHTML = `
             </div>
          </div>
 `
-
-//Input(text) validation
-document.getElementById("output").addEventListener("input", (e) => {
-   e.target.value = e.target.value.replace(/[^0-9.]/g, "")
-})
 
 //Input with calculator's keyboard
 document.querySelectorAll(".input_btn").forEach((btn) =>
@@ -70,4 +65,32 @@ document.getElementById("invert").addEventListener("click", () => {
 //Percent button
 document.getElementById("percent").addEventListener("click", () => {
    calculator.countPercent()
+})
+
+//Validation
+document.addEventListener("keydown", (e) => {
+   e.preventDefault()
+   const inputBtns = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "."]
+   const funcBtns = {
+      Enter: "equals",
+      "*": "multiply",
+      "/": "divide",
+      "+": "add",
+      "-": "subtract",
+   }
+   const topBtns = {
+      Backspace: "clear",
+      "%": "percent",
+   }
+
+   if (inputBtns.includes(e.key)) {
+      document.querySelector(`.input_btn[input_data="${e.key}"]`).click()
+   }
+
+   if (funcBtns[e.key]) {
+      document.querySelector(`.functional[operator="${funcBtns[e.key]}"]`).click()
+   }
+   if (topBtns[e.key]) {
+      document.getElementById(topBtns[e.key]).click()
+   }
 })
