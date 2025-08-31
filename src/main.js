@@ -1,5 +1,10 @@
 import "./assets/styles/styles.scss"
 import { createCalculator } from "./calculator"
+import { changeTheme, initTheme } from "./theme"
+
+document.addEventListener("DOMContentLoaded", () => {
+   initTheme()
+})
 
 const calculator = createCalculator()
 
@@ -27,7 +32,8 @@ document.getElementById("app").innerHTML = `
                <button class="input_btn" input_data="2">2</button>
                <button class="input_btn" input_data="3">3</button>
                <button class="functional" operator="add">+</button>
-               <button class="input_btn" input_data="0" id="zero">0</button>
+               <button class="input_btn" input_data="0" >0</button>
+               <button class="theme" >Auto</button>
                <button class="input_btn" input_data=".">.</button>
                <button class="functional" operator="equals">=</button>
             </div>
@@ -67,9 +73,13 @@ document.getElementById("percent").addEventListener("click", () => {
    calculator.countPercent()
 })
 
-//Validation
+//Theme button
+document.querySelector(".theme").addEventListener("click", () => {
+   changeTheme()
+})
+
+//Keyboard input
 document.addEventListener("keydown", (e) => {
-   e.preventDefault()
    const inputBtns = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "."]
    const funcBtns = {
       Enter: "equals",
@@ -87,13 +97,16 @@ document.addEventListener("keydown", (e) => {
    }
 
    if (inputBtns.includes(e.key)) {
+      e.preventDefault()
       document.querySelector(`.input_btn[input_data="${e.key}"]`).click()
    }
 
    if (funcBtns[e.key]) {
+      e.preventDefault()
       document.querySelector(`.functional[operator="${funcBtns[e.key]}"]`).click()
    }
    if (topBtns[e.key]) {
+      e.preventDefault()
       document.getElementById(topBtns[e.key]).click()
    }
 })
