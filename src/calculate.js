@@ -1,8 +1,8 @@
-export function algorithm(num1, num2, operation) {
+export function calculate(num1, num2, operator) {
    num1 = Number(num1)
    num2 = Number(num2)
 
-   switch (operation) {
+   switch (operator) {
       case "add":
          return num1 + num2
       case "subtract":

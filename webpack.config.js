@@ -8,6 +8,10 @@ module.exports = (env) => {
       module: {
          rules: [
             {
+               test: /\.svg/,
+               type: 'asset/resource',
+            },
+            {
                test: /\.s[ac]ss$/i,
                use: [
                   "style-loader",

@@ -13,6 +13,7 @@ html, body {
 }
 
 main{
+  display: flex;
   .wrapper{
     background-color: $wrapper-background-color;
     width: fit-content;
@@ -27,7 +28,7 @@ main{
       width: calc(4 * 5vw + 5px);
       border-radius: 5px;
       border: 1px solid $text-color;
-      height: 30%;
+      height: 70%;
       padding: 5px;
       margin: 0;
       font-size: 5vh;
@@ -88,6 +89,12 @@ main{
         }
       }
     }
+  }
+}
+
+header{
+  h1{
+    text-align: center;
   }
 }
 
