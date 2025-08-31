@@ -7,7 +7,7 @@ export function createCalculator() {
    let clearScreen = false
 
    document.addEventListener("DOMContentLoaded", () => {
-      output = document.getElementById("output")
+      output = document.getElementById("output");
    })
 
    return {
@@ -19,10 +19,10 @@ export function createCalculator() {
             document.querySelectorAll(".functional").forEach((btn) => {
                btn.removeAttribute("id")
             })
-         } else if (output.value.length === 1) {
-            output.value = "0"
-
             document.getElementById("clear").innerText = "AC"
+         } else if (output.value.length <= 1 || output.value === "0.") {
+            document.getElementById("clear").innerText = "AC"
+            output.value = "0"
          } else {
             output.value = output.value.slice(0, -1)
          }
@@ -47,6 +47,12 @@ export function createCalculator() {
             if (active_btn) {
                output.value = calculate(num1, output.value, selected_operator)
 
+               if (output.value === "0") {
+                  selected_operator = null
+                  num1 = null
+                  document.getElementById("clear").innerText = "AC"
+               }
+
                document.querySelectorAll(".functional").forEach((btn) => {
                   btn.removeAttribute("id")
                   selected_operator = null
@@ -70,6 +76,7 @@ export function createCalculator() {
             output.value += input_data
             document.getElementById("clear").innerText = `C`
          } else {
+            document.getElementById("clear").innerText = `C`
             output.value += input_data
          }
       },
