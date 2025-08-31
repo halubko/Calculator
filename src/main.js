@@ -73,7 +73,10 @@ document.addEventListener("keydown", (e) => {
    const inputBtns = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "."]
    const funcBtns = {
       Enter: "equals",
+      "=": "equals",
       "*": "multiply",
+      x: "multiply",
+      х: "multiply",
       "/": "divide",
       "+": "add",
       "-": "subtract",
