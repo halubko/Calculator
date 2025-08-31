@@ -7,7 +7,7 @@ export function createCalculator() {
    let clearScreen = false
 
    document.addEventListener("DOMContentLoaded", () => {
-      output = document.getElementById("output");
+      output = document.getElementById("output")
    })
 
    return {
@@ -24,7 +24,8 @@ export function createCalculator() {
             document.getElementById("clear").innerText = "AC"
             output.value = "0"
          } else {
-            output.value = output.value.slice(0, -1)
+            const sliceTo = -1
+            output.value = output.value.slice(0, sliceTo)
          }
       },
 
