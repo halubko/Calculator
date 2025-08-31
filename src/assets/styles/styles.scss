@@ -5,14 +5,18 @@
 
   $active-button-color: rgb(255, 191, 29);
 
+  html, body {
+    height: 100%;
+  }
+
   body.#{$name}-theme {
     background-color: $background-color;
     color: $text-color;
-    height: 100%;
     margin: 0;
     padding: 0;
+    align-content: center;
 
-    main {
+    div {
       display: flex;
 
       .wrapper {
@@ -41,12 +45,6 @@
             outline: none;
             border-color: $functional-button-color;
           }
-
-          &::-webkit-outer-spin-button,
-          &::-webkit-inner-spin-button {
-            -webkit-appearance: none;
-            margin: 0;
-          }
         }
 
         .buttons {
@@ -65,6 +63,10 @@
             font-size: 3.5vh;
             color: $text-color;
             cursor: pointer;
+
+            &:focus {
+              outline: none;
+            }
 
             &:active {
               background-color: color.scale($button-background, $lightness: -20%);
@@ -104,5 +106,5 @@
   }
 }
 
-@include theme('light', #000, #fff, rgb(128, 128, 128), rgb(168, 168, 168), rgb(143, 143, 143), #fff);
+@include theme('light', #000, #fff, rgb(128, 128, 128), rgb(168, 168, 168), rgb(143, 143, 143), #000);
 @include theme('dark', #fff, #1b1b1b, rgb(128, 128, 128), rgb(168, 168, 168), rgb(143, 143, 143), #fff);

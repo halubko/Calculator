@@ -99,6 +99,7 @@ document.addEventListener("keydown", (e) => {
    if (inputBtns.includes(e.key)) {
       e.preventDefault()
       document.querySelector(`.input_btn[input_data="${e.key}"]`).click()
+      document.querySelector(`.input_btn[input_data="${e.key}"]`).classList.toggle("active")
    }
 
    if (funcBtns[e.key]) {

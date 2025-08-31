@@ -68,7 +68,11 @@ export function createCalculator() {
          }
 
          if (clearScreen) {
-            output.value = ""
+            if (input_data === ".") {
+               output.value = "0"
+            } else {
+               output.value = ""
+            }
             clearScreen = false
          }
 
