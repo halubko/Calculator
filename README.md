@@ -16,6 +16,10 @@ https://docs.google.com/document/d/1zpXXeSae-BlcxPKgw3DhxZA92cspVailrPYoaXSYrW8/
 3. "src" - main source code directory. Includes:
     * JS files
     * "assets" - folder for styles, fonts, images and etc.
+   
+# 4) Deploy
+https://halubko.github.io/Calculator/
+   
 
 # 1) ТЗ
 https://docs.google.com/document/d/1zpXXeSae-BlcxPKgw3DhxZA92cspVailrPYoaXSYrW8/edit?pli=1&tab=t.0
@@ -35,3 +39,6 @@ https://docs.google.com/document/d/1zpXXeSae-BlcxPKgw3DhxZA92cspVailrPYoaXSYrW8/
 3. "src" - основная директория исходного кода. Includes:
    * JS файлы
    * "assets" - папка для стилей, шрифтов, картинок и ост.
+
+# 4) Деплой
+https://halubko.github.io/Calculator/
