@@ -23,6 +23,9 @@ export function createCalculator() {
          } else if (output.value.length <= 1 || output.value === "0.") {
             document.getElementById("clear").innerText = "AC"
             output.value = "0"
+         } else if (output.value === "Division by zero") {
+            document.getElementById("clear").innerText = "AC"
+            output.value = "0"
          } else {
             const sliceTo = -1
             output.value = output.value.slice(0, sliceTo)
@@ -76,7 +79,7 @@ export function createCalculator() {
             clearScreen = false
          }
 
-         if (output.value === "0" && input_data !== ".") {
+         if ((output.value === "0" && input_data !== ".") || output.value === "Division by zero") {
             output.value = ""
             output.value += input_data
             document.getElementById("clear").innerText = `C`
